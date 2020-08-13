@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="main-assets/images/favicon.png"
+        sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed"
+        href="main-assets/images/favicon.png" />
+    <meta name="msapplication-TileImage"
+        content="main-assets/images/favicon.png" />
+
+
+    <title>Apply</title>
+
+   
+
+    <!-- Bootstrap core CSS -->
+    <link href="main-assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    
+	
+	<link rel="stylesheet" href="main-assets/css/intlTelInput.css">
+	
+	<style>
+	#if input, #if select{
+	color: #f1f6f6; 
+	background:transparent;  
+	border: 1px solid transparent; 
+	border-bottom: 1px solid #ccc;"
+	 
+	}
+	
+	#if select option {
+	background: #4835d4;
+}
+				 
+	</style>
+	
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="pb-2 pt-2 text-center">
+        <img class="d-block mx-auto mb-2" src="main-assets/images/user.png" alt="" width="72" height="72">
+        <h2 class="text-muted">Form</h2>
+          </div>
+ <form class="needs-validation" method="post" action="success.html" novalidate>
+      <div class="row border rounded">
+       
+		<div class="col-md-6 order-md-1 bg-white rounded-left">
+          <h4 class="my-3 text-muted">Personal Information</h4>
+         
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Firstname *</label>
+                <input type="text" class="form-control onlyAlph" id="firstName" name="firstName" placeholder="Firstname" value="" required>
+                <div class="invalid-feedback">
+                  Valid firstname is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Middlename</label>
+                <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middlename" value="" required>
+                <div class="invalid-feedback">
+                  Valid middlename is required.
+                </div>
+              </div>
+            </div>
+
+                 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Surname</label>
+                <input type="text" class="form-control" id="surName" name="surName" placeholder="Surname" value="" required>
+                <div class="invalid-feedback">
+                  Valid surname is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                 
+                <label for="country">Date of Birth</label>
+                <input type="date" class="form-control"/>
+                 
+              </div>
+              
+            </div>
+			
+	     <div class="row">
+              <div class="col-md-6 mb-3">
+               <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                 
+                <label for="country">Gender</label>
+                <select class="custom-select d-block w-100" id="gender" name="gender" required>
+                  <option value="">Select</option>
+				  <option>Male</option>
+                  <option>Female</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a Gender.
+                </div>
+              </div>
+              
+            </div>
+			
+ 
+
+			<div class="mb-3">
+              <label for="cus-phone">Mobile number</label>
+              <div class="input-group">
+               
+                <input type="tel" class="form-control" id="cus_phone" name="cus_phone"  placeholder="Enter mobile" pattern="[0-9]{10,11}" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your Mobile is required.
+                </div>
+              </div>
+            </div>
+
+          
+
+            <div class="mb-3">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="Enter address" required>
+              <div class="invalid-feedback">
+                Please enter your address.
+              </div>
+            </div>
+
+            
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Country</label>
+                <select class="custom-select d-block w-100" id="country_id" name="cus_country" required>
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="state">State</label>
+                <select class="custom-select d-block w-100"  id="state_id" name="cus_state" required>
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="">
+                
+              </div>
+            </div>
+            <hr class="mb-4">
+            
+             
+            <h4 class="mb-3">Next Of Kin</h4>
+			
+			 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Surname</label>
+                <input type="text" class="form-control" id="nok_surname" name="nok_surname" placeholder="" value="" required />
+                <div class="invalid-feedback">
+                  Valid surname is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Other names</label>
+                <input type="text" class="form-control" id="nok_othernames" name="nok_othernames" placeholder="" value="" required />
+                <div class="invalid-feedback">
+                  Valid name is required.
+                </div>
+              </div>
+            </div>
+
+            
+			  <div class="mb-3">
+              <label for="email">Email </label>
+              <input type="email" class="form-control" id="nok_email" name="nok_email" placeholder="Enter email">
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+			<div class="mb-5">
+              <label for="nok-phone">Mobile number</label>
+              <div class="input-group">
+                
+                <input type="text" class="form-control" id="nok_phone" name="nok_phone"  placeholder="Enter mobile"  pattern="[0-9]{10,11}" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Next of kin mobile is required.
+                </div>
+              </div>
+            </div>
+
+          
+        
+        </div>
+      
+	  
+	     <div id="if" class="col-md-6 order-md-2 rounded-right investment-form bg-primary">
+          <h4 class="d-flex justify-content-between align-items-center my-3">
+            <span >Investment</span>
+            
+          </h4>
+		  
+		  <hr class="mb-4">
+            <div class="custom-control custom-checkbox mb-2">
+              <input type="checkbox" class="custom-control-input" id="one-time">
+              <label class="custom-control-label" for="one-time">ONE TIME DEBIT: (N)</label>
+            </div>
+			 
+			
+			 <div class="mb-3">
+              <label for="ot-date">DATE OF ONE-TIME</label>
+              <div class="input-group">
+                
+                <input disabled type="date" class="form-control" id="ot-date" placeholder="Select date" required style=" color: white; background:transparent;  border: 1px solid transparent; border-bottom: 1px solid #ccc;">
+				 
+                <div class="invalid-feedback" style="width: 100%;">
+                 Date is required.
+                </div>
+              </div>
+            </div>
+			
+			 <div class="mb-3">
+              <label for="ot-amount">AMOUNT</label>
+              <div class="input-group">
+                 
+                <input type="text" class="form-control" id="ot-amount" placeholder="Amount" required disabled>
+                <div class="invalid-feedback" style="width: 100%;">
+                 Amount is required.
+                </div>
+              </div>
+            </div>
+			
+			 <div class="mb-3">
+              <label for="ot-acc-number">ACCOUNT NUMBER</label>
+              <div class="input-group">
+                 
+                <input type="number" class="form-control" id="ot-acc-number" placeholder="Account number" pattern="[0-9]{10}" required disabled>
+                <div id="ot-acc-err"  class="invalid-feedback" style="width: 100%;">
+                  Account number is required.
+                </div>
+              </div>
+            </div>
+			
+			  <hr class="mb-4">
+            <div class="custom-control custom-checkbox mb-2">
+              <input type="checkbox" class="custom-control-input" id="periodic">
+              <label class="custom-control-label" for="periodic">PERIODIC INVESTMENTS: (N)</label>
+            </div>
+			   
+			
+			 <div class="mb-3">
+              <label for="periodic-date">INTERVAL DATE</label>
+              <div class="input-group">
+                 
+                <select class="custom-select d-block w-100" id="periodic-date" required disabled>
+				<option value="">Choose...</option>
+				<option>12th Monthly</option>
+				<option>24th Monthly</option>
+				</select>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Interval date is required.
+                </div>
+              </div>
+            </div>
+			
+			 <div class="mb-3">
+              <label for="periodic-amount">AMOUNT</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="periodic-amount" placeholder="Amount" required disabled>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Amount is required.
+                </div>
+              </div>
+            </div>
+			
+			 <div class="mb-3">
+              <label for="periodic-account">ACCOUNT NUMBER</label>
+              <div class="input-group">
+                <input  type="text" pattern="[0-9]{10}" class="form-control" id="periodic-account" placeholder="Account number"  required disabled>
+                <div id="periodic-acc-err" class="invalid-feedback" style="width: 100%;">
+                 Enter a valid Account Number
+                </div>
+              </div>
+            </div>
+			
+            <hr class="mb-4">
+			
+			<div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="tac" required>
+      <label class="form-check-label" for="tac">
+        I agree to the Terms and Conditions.
+      </label>
+    </div>
+  </div>
+    <input type="tel" id="credit-card-mask" />
+  
+			
+			    <button class="btn btn-light btn-lg btn-block mb-3" type="submit">Submit</button>
+        </div>
+      
+	  
+	  </div>
+	  
+	    </form>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="main-assets/js/jquery-3.3.1.min.js"></script>
+    <script src="main-assets/js/bootstrap.min.js"></script>
+
+	<script src="main-assets/js/intlTelInput.js"></script>
+	<script src="main-assets/js/jquery.mask.js"></script>
+	
+
+   <script>	   
+	var input = document.querySelector('#credit-card-mask'),
+    oldValue,
+    oldCursor,
+    regex = new RegExp(/^\d{0,16}$/g),
+    mask = function(value) {
+      var output = [];
+        for(var i = 0; i < value.length; i++) {
+          if(i !== 0 && i % 4 === 0) {
+            output.push(" "); // add the separator
+          }
+          output.push(value[i]);
+        }
+        return output.join("");
+    },
+    unmask = function(value) {
+      var output = value.replace(new RegExp(/[^\d]/, 'g'), ''); // Remove every non-digit character
+      return output;
+    },
+    checkSeparator = function(position, interval) {
+      return Math.floor(position / (interval + 1));
+    },
+    keydownHandler = function(e) {
+      var el = e.target;
+      
+      oldValue = el.value;
+      oldCursor = el.selectionEnd;
+    },
+    inputHandler = function(e) {
+      var el = e.target,
+          newCursorPosition,
+          newValue = unmask(el.value)
+      ;
+      
+      if(newValue.match(regex)) {
+        newValue = mask(newValue);
+        
+        newCursorPosition = oldCursor - checkSeparator(oldCursor, 4) + checkSeparator(oldCursor + (newValue.length - oldValue.length), 4) + (unmask(newValue).length - unmask(oldValue).length);
+                
+        if(newValue !== "") {
+          el.value = newValue;
+        } else {
+          el.value = "";
+        }
+      } else {
+        el.value = oldValue;
+        newCursorPosition = oldCursor;
+      }
+      el.setSelectionRange(newCursorPosition, newCursorPosition);
+    }
+;
+
+input.addEventListener('keydown', keydownHandler);
+input.addEventListener('input', inputHandler);
+
+
+
+  
+  var inputHome = document.querySelector("#cus_phone");
+var inputMobile = document.querySelector("#nok_phone");
+
+var cusMobile = window.intlTelInput(inputHome, {
+  initialCountry: 'ng',
+    nationalMode: true,
+  utilsScript: "main-assets/js/utils.js?20" // just for formatting/placeholders etc
+});
+window.intlTelInput(inputMobile, {
+  initialCountry: 'ng',
+   nationalMode: true,
+  utilsScript: "main-assets/js/utils.js?20"
+});
+
+
+console.log(cusMobile.getNumber());
+
+$(document).ready(function() {
+        $('.onlyAlph').on('keydown',function (e) {
+        var regex = new RegExp("^[a-zA-Z \s]+$");
+        var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(str)) {
+            return true;
+        }
+        else
+        {
+        e.preventDefault();
+       // alert('Please Enter Alphabate');
+        return false;
+        }
+    });
+  $('#ot-amount').mask("#,##0,000", {reverse: true});
+  $('#periodic-amount').mask("#,##0,000", {reverse: true});
+});
+	var otAcc = document.getElementById("ot-acc-number");
+	var otAmount = document.getElementById("ot-amount");
+	var otDate = document.getElementById("ot-date");
+	var otCheck = document.getElementById("one-time");
+	var periodicAcc = document.getElementById("periodic-account");
+	var periodicAmount = document.getElementById("periodic-amount");
+	var periodicDate = document.getElementById("periodic-date");
+	var periodicCheck = document.getElementById("periodic");
+	var initPeriodicCheck = false;
+	var initOtCheck = false;
+	
+	function toggleOtCheck(){
+	initOtCheck = !initOtCheck;
+	}
+	function togglePeriodicCheck(){
+	initPeriodicCheck = !initPeriodicCheck;
+	}
+	
+	function isOneTimeEmpty(){
+	var otAccEmpty = otAcc.value === null || otAcc.value === "";
+	var otAmountEmpty = otAmount.value === null || otAmount.value === "";
+	var otDateEmpty = otDate.value === null || otDate.value === "";
+	var otNotChecked = !otCheck.checked;
+	 return otAccEmpty && otAmountEmpty && otDateEmpty &&  otNotChecked;
+	}
+	
+	function disableOneTime(){
+	otAcc.disabled=true;
+	otAcc.value="";
+	otAmount.disabled=true;
+	otAmount.value ="";
+	otDate.disabled=true;
+	otDate.value = "";
+	//otCheck.disabled=true;
+	 
+	}
+	
+	function enableOneTime(){
+	otAcc.disabled=false;
+	otAmount.disabled=false;
+	otDate.disabled=false;
+	//otCheck.disabled=true;
+	 
+	}
+	
+	function setRequired(){
+	if(!otCheck.checked && !periodicCheck.checked){
+	otCheck.required=true;
+	periodicCheck.required=true;
+	}}
+	
+	function isPeriodicEmpty(){
+	var periodicAccEmpty = periodicAcc.value === null || periodicAcc.value === "";
+	var periodicAmountEmpty = periodicAmount.value === null || periodicAmount.value === "";
+	var periodicDateEmpty = periodicDate.value === null || periodicDate.value === "";
+	var periodicNotChecked = !periodicCheck.checked;
+	 return periodicAccEmpty && periodicAmountEmpty && periodicDateEmpty &&  periodicNotChecked;
+	}
+	
+	function disablePeriodic(){
+	periodicAcc.disabled=true;
+	periodicAcc.value="";
+	periodicAmount.disabled=true;
+	periodicAmount.value="";
+	periodicDate.disabled=true;
+	periodicDate.value="";
+	//periodicCheck.disabled=true;
+	 
+	}
+	
+	function enablePeriodic(){
+	periodicAcc.disabled=false;
+	periodicAmount.disabled=false;
+	periodicDate.disabled=false;
+	//periodicCheck.disabled=true;
+	 
+	}
+	
+	 
+	 
+	otCheck.addEventListener('click', function(event){
+	toggleOtCheck();
+	if(initOtCheck){
+	enableOneTime();
+	}else disableOneTime();
+	});
+	
+	periodicCheck.addEventListener('click', function(event){
+	togglePeriodicCheck();
+	if(initPeriodicCheck){
+	enablePeriodic();
+	}else disablePeriodic();
+	});
+	
+	
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+			// console.log(isOneTimeEmpty());
+			 console.log(cusMobile.getNumber());
+			 if(!otCheck.checked && !periodicCheck.checked){
+	otCheck.required=true;
+	periodicCheck.required=true;}
+	
+	if(otCheck.checked && !periodicCheck.checked){	 
+	periodicCheck.required=false;}
+	
+	if(!otCheck.checked && periodicCheck.checked){	 
+	otCheck.required=false;}
+	
+	if(otAcc.value.length < 10){
+	document.getElementById("ot-acc-err").innerHTML = "Enter a valid Account Number"
+	}
+	
+	if(periodicAcc.value.length < 10){
+	document.getElementById("periodic-acc-err").innerHTML = "Enter a valid Account Number"
+	}
+	 
+			 
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+				var errorElements = document.querySelectorAll(
+                                "input.form-control:invalid, select.custom-select:invalid"
+                            );
+
+                            $('html, body').animate({
+                                scrollTop: $(errorElements[0]).offset().top
+                            }, 1000);
+              }
+              form.classList.add('was-validated');
+			   
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+
+ </body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="main-assets/images/favicon.png"
+        sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed"
+        href="main-assets/images/favicon.png" />
+    <meta name="msapplication-TileImage"
+        content="main-assets/images/favicon.png" />
+
+
+    <title>Apply</title>
+
+   
+
+    <!-- Bootstrap core CSS -->
+    <link href="main-assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+	
+	 <link rel="stylesheet" type="text/css" href="main-assets/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="main-assets/css/animatecss/animate.min.css" />
+    
+	
+	<link rel="stylesheet" href="main-assets/css/intlTelInput.css">
+
+
+</head>
+<body>
+
+<main class="container">
+                 <div class="row py-5">
+				 <div class="mx-auto col-9">
+					<form class="small">
+
+                            <div class="response" style="text-align: center"></div>
+                            <div class="form-row">
+
+                                <div class="form-group col-12 px-md-4">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" id="firstname" name="first_name" class="form-control require">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <div class="form-group col-12 px-md-4">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" id="lastname" name="last_name" class="form-control require">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <div class="form-group col-12 px-md-4">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-control require"
+                                        data-valid="email" data-error="Email should be valid.">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <div class="form-group col-12 px-md-4">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="Subject" class="form-control require">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <div class="form-group col-12 px-md-4">
+                                    <label for="message">Message</label>
+                                    <textarea name="message" id="messageTen" rows="5" class="form-control require"
+                                        required></textarea>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                               
+
+                                <div class="form-group col-12 px-md-4 response" style="text-align: center"></div>
+
+                                <div class="form-group col-12 px-md-4 py-5">
+                                    <div class="banner-btns">
+                                        <button type="button"
+                                            class="btn btn-primary btn-block w-100 h5 submitForm">Submit</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </form>
+		</div>
+    </div>
+
+
+</main>
+
+ <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="main-assets/js/jquery-3.3.1.min.js"></script>
+    <script src="main-assets/js/bootstrap.min.js"></script>
+
+	<script src="main-assets/js/intlTelInput.js"></script>
+	<script src="main-assets/js/jquery.mask.js"></script>
+
+<script>
+//------- Contact Form Submition ---------//
+    function checkRequire(formId, targetResp) {
+		targetResp.each(function() {
+			$(this).html("");
+		 });
+     // targetResp.html("");
+      var email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+      var url = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/;
+      var image = /\.(jpe?g|gif|png|PNG|JPE?G)$/;
+      var mobile = /^[\s()+-]*([0-9][\s()+-]*){6,20}$/;
+      var facebook = /^(https?:\/\/)?(www\.)?facebook.com\/[a-zA-Z0-9(\.\?)?]/;
+      var twitter = /^(https?:\/\/)?(www\.)?twitter.com\/[a-zA-Z0-9(\.\?)?]/;
+      var google_plus = /^(https?:\/\/)?(www\.)?plus.google.com\/[a-zA-Z0-9(\.\?)?]/;
+      var check = 0;
+      $("#er_msg").remove();
+      var target = typeof formId == "object" ? $(formId) : $("#" + formId);
+      target.find("input , textarea , select").each(function () {
+        if ($(this).hasClass("require")) {
+          if ($(this).val().trim() == "") {
+            check = 1;
+            $(this).focus();
+           // targetResp.html("<div class='alert alert-danger'>You missed out some fields.</div>");
+			targetResp.each(function() {
+			$(this).html("<div class='alert alert-danger'>You missed out some fields.</div>");
+		 });
+            $(this).addClass("error");
+            return false;
+          } else {
+            $(this).removeClass("error");
+          }
+        }
+        if ($(this).val().trim() != "") {
+          var valid = $(this).attr("data-valid");
+          if (typeof valid != "undefined") {
+            if (!eval(valid).test($(this).val().trim())) {
+              $(this).addClass("error");
+              $(this).focus();
+              check = 1;
+              //targetResp.html($(this).attr("data-error"));
+			  let thisThis = $(this);
+			  targetResp.each(function() {
+			$(this).html("<div class='alert alert-danger'>"+thisThis.attr("data-error")+"</div>");
+		 });
+              return false;
+            } else {
+              $(this).removeClass("error");
+            }
+          }
+        }
+      });
+      return check;
+    }
+    $(".submitForm").on("click", function () {
+      var _this = $(this);
+      var targetForm = _this.closest("form");
+      var errroTarget = targetForm.find(".response");
+      var check = checkRequire(targetForm, errroTarget);
+      if (check == 0) {
+        $(".submitForm").html(" <i class='fa fa-spinner fa-spin fa-2x'></i>Sending Message...");
+		 $(".submitForm").attr("disabled", true);
+        var formDetail = new FormData(targetForm[0]);
+        formDetail.append("form_type", _this.attr("form-type"));
+		
+		//console.log(formDetail);
+        $.ajax({
+          method: "post",
+          url: "submit-contact",
+          data: formDetail,
+          cache: false,
+          contentType: false,
+          processData: false,
+        }).done(function (resp) {
+			console.log(resp);
+			console.log("here");
+          if (resp && resp.success) {
+            targetForm.find("input").val("");
+            targetForm.find("textarea").val("");
+            // errroTarget.html(
+              // "<div class='alert alert-success'>" + resp.success + "</p>"
+            // );
+			errroTarget.each(function() {
+			$(this).html("<div class='alert alert-success'>" + resp.success + "</p>");
+		 });
+          } else {
+            // errroTarget.html(
+              // "<div class='alert alert-danger'>Something went wrong please try again latter.<div class='alert alert-danger'>"
+            // );
+			 errroTarget.each(function() {
+			$(this).html("<div class='alert alert-danger'>Something went wrong please try again latter.<div class='alert alert-danger'>");
+		 });
+          }
+
+          $(".submitForm").html("Send Message");
+		   $(".submitForm").attr("disabled", false);
+        }).fail(function (resp, err) {
+		  console.log(resp.statusText);
+			console.log(err);
+		});
+      }
+    });
+	
+	</script>
+	
+	</body>
+	</html>
